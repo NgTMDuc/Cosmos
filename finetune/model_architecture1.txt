@@ -1,0 +1,940 @@
+RecursiveScriptModule(
+  original_name=CausalContinuousVideoTokenizer
+  (encoder): RecursiveScriptModule(
+    original_name=EncoderFactorized
+    (patcher3d): RecursiveScriptModule(original_name=Patcher3D)
+    (conv_in): RecursiveScriptModule(
+      original_name=Sequential
+      (0): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+      (1): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+    )
+    (down): RecursiveScriptModule(
+      original_name=ModuleList
+      (0): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(
+              original_name=CausalConv3d
+              (conv3d): RecursiveScriptModule(original_name=Conv3d)
+            )
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+        (downsample): RecursiveScriptModule(
+          original_name=CausalHybridDownsample3d
+          (conv1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (conv2): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (conv3): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+      )
+      (1): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(
+              original_name=CausalConv3d
+              (conv3d): RecursiveScriptModule(original_name=Conv3d)
+            )
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+        (downsample): RecursiveScriptModule(
+          original_name=CausalHybridDownsample3d
+          (conv1): RecursiveScriptModule(original_name=Identity)
+          (conv2): RecursiveScriptModule(original_name=Identity)
+          (conv3): RecursiveScriptModule(original_name=Identity)
+        )
+      )
+      (2): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+      )
+    )
+    (mid): RecursiveScriptModule(
+      original_name=Module
+      (block_1): RecursiveScriptModule(
+        original_name=CausalResnetBlockFactorized3d
+        (norm1): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (conv1): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (norm2): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (dropout): RecursiveScriptModule(original_name=Dropout)
+        (conv2): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+      )
+      (attn_1): RecursiveScriptModule(
+        original_name=Sequential
+        (0): RecursiveScriptModule(
+          original_name=CausalAttnBlock
+          (norm): RecursiveScriptModule(
+            original_name=CausalNormalize
+            (norm): RecursiveScriptModule(original_name=GroupNorm)
+          )
+          (q): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (k): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (v): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (proj_out): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (1): RecursiveScriptModule(
+          original_name=CausalTemporalAttnBlock
+          (norm): RecursiveScriptModule(
+            original_name=CausalNormalize
+            (norm): RecursiveScriptModule(original_name=GroupNorm)
+          )
+          (q): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (k): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (v): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (proj_out): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+      )
+      (block_2): RecursiveScriptModule(
+        original_name=CausalResnetBlockFactorized3d
+        (norm1): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (conv1): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (norm2): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (dropout): RecursiveScriptModule(original_name=Dropout)
+        (conv2): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+      )
+    )
+    (norm_out): RecursiveScriptModule(
+      original_name=CausalNormalize
+      (norm): RecursiveScriptModule(original_name=GroupNorm)
+    )
+    (conv_out): RecursiveScriptModule(
+      original_name=Sequential
+      (0): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+      (1): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+    )
+  )
+  (decoder): RecursiveScriptModule(
+    original_name=DecoderFactorized
+    (unpatcher3d): RecursiveScriptModule(original_name=UnPatcher3D)
+    (conv_in): RecursiveScriptModule(
+      original_name=Sequential
+      (0): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+      (1): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+    )
+    (mid): RecursiveScriptModule(
+      original_name=Module
+      (block_1): RecursiveScriptModule(
+        original_name=CausalResnetBlockFactorized3d
+        (norm1): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (conv1): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (norm2): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (dropout): RecursiveScriptModule(original_name=Dropout)
+        (conv2): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+      )
+      (attn_1): RecursiveScriptModule(
+        original_name=Sequential
+        (0): RecursiveScriptModule(
+          original_name=CausalAttnBlock
+          (norm): RecursiveScriptModule(
+            original_name=CausalNormalize
+            (norm): RecursiveScriptModule(original_name=GroupNorm)
+          )
+          (q): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (k): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (v): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (proj_out): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (1): RecursiveScriptModule(
+          original_name=CausalTemporalAttnBlock
+          (norm): RecursiveScriptModule(
+            original_name=CausalNormalize
+            (norm): RecursiveScriptModule(original_name=GroupNorm)
+          )
+          (q): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (k): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (v): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (proj_out): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+      )
+      (block_2): RecursiveScriptModule(
+        original_name=CausalResnetBlockFactorized3d
+        (norm1): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (conv1): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (norm2): RecursiveScriptModule(
+          original_name=CausalNormalize
+          (norm): RecursiveScriptModule(original_name=GroupNorm)
+        )
+        (dropout): RecursiveScriptModule(original_name=Dropout)
+        (conv2): RecursiveScriptModule(
+          original_name=Sequential
+          (0): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+        (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+      )
+    )
+    (up): RecursiveScriptModule(
+      original_name=ModuleList
+      (0): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(
+              original_name=CausalConv3d
+              (conv3d): RecursiveScriptModule(original_name=Conv3d)
+            )
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (2): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+      )
+      (1): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (2): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+        (upsample): RecursiveScriptModule(
+          original_name=CausalHybridUpsample3d
+          (conv1): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (conv2): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+          (conv3): RecursiveScriptModule(
+            original_name=CausalConv3d
+            (conv3d): RecursiveScriptModule(original_name=Conv3d)
+          )
+        )
+      )
+      (2): RecursiveScriptModule(
+        original_name=Module
+        (block): RecursiveScriptModule(
+          original_name=ModuleList
+          (0): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (1): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+          (2): RecursiveScriptModule(
+            original_name=CausalResnetBlockFactorized3d
+            (norm1): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (conv1): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (norm2): RecursiveScriptModule(
+              original_name=CausalNormalize
+              (norm): RecursiveScriptModule(original_name=GroupNorm)
+            )
+            (dropout): RecursiveScriptModule(original_name=Dropout)
+            (conv2): RecursiveScriptModule(
+              original_name=Sequential
+              (0): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+              (1): RecursiveScriptModule(
+                original_name=CausalConv3d
+                (conv3d): RecursiveScriptModule(original_name=Conv3d)
+              )
+            )
+            (nin_shortcut): RecursiveScriptModule(original_name=Identity)
+          )
+        )
+        (attn): RecursiveScriptModule(original_name=ModuleList)
+        (upsample): RecursiveScriptModule(
+          original_name=CausalHybridUpsample3d
+          (conv1): RecursiveScriptModule(original_name=Identity)
+          (conv2): RecursiveScriptModule(original_name=Identity)
+          (conv3): RecursiveScriptModule(original_name=Identity)
+        )
+      )
+    )
+    (norm_out): RecursiveScriptModule(
+      original_name=CausalNormalize
+      (norm): RecursiveScriptModule(original_name=GroupNorm)
+    )
+    (conv_out): RecursiveScriptModule(
+      original_name=Sequential
+      (0): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+      (1): RecursiveScriptModule(
+        original_name=CausalConv3d
+        (conv3d): RecursiveScriptModule(original_name=Conv3d)
+      )
+    )
+  )
+  (quant_conv): RecursiveScriptModule(
+    original_name=CausalConv3d
+    (conv3d): RecursiveScriptModule(original_name=Conv3d)
+  )
+  (post_quant_conv): RecursiveScriptModule(
+    original_name=CausalConv3d
+    (conv3d): RecursiveScriptModule(original_name=Conv3d)
+  )
+  (distribution): RecursiveScriptModule(original_name=IdentityDistribution)
+)

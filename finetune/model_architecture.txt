@@ -1,0 +1,539 @@
+CausalContinuousVideoTokenizer(
+  (encoder): EncoderFactorized(
+    (patcher3d): Patcher3D()
+    (conv_in): Sequential(
+      (0): CausalConv3d(
+        (conv3d): Conv3d(192, 128, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+      )
+      (1): CausalConv3d(
+        (conv3d): Conv3d(128, 128, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+      )
+    )
+    (down): ModuleList(
+      (0): Module(
+        (block): ModuleList(
+          (0): CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 128, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(128, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): CausalConv3d(
+              (conv3d): Conv3d(128, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+            )
+          )
+          (1): CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (downsample): CausalHybridDownsample3d(
+          (conv1): CausalConv3d(
+            (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 2, 2))
+          )
+          (conv2): CausalConv3d(
+            (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(2, 1, 1))
+          )
+          (conv3): CausalConv3d(
+            (conv3d): Conv3d(256, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+      )
+      (1): Module(
+        (block): ModuleList(
+          (0): CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): CausalConv3d(
+              (conv3d): Conv3d(256, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+            )
+          )
+          (1): CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (downsample): CausalHybridDownsample3d(
+          (conv1): Identity()
+          (conv2): Identity()
+          (conv3): Identity()
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0-1): 2 x CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+      )
+    )
+    (mid): Module(
+      (block_1): CausalResnetBlockFactorized3d(
+        (norm1): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (conv1): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (norm2): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Sequential(
+        (0): CausalAttnBlock(
+          (norm): CausalNormalize(
+            (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+          )
+          (q): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (k): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (v): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_out): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (1): CausalTemporalAttnBlock(
+          (norm): CausalNormalize(
+            (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+          )
+          (q): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (k): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (v): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_out): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+      )
+      (block_2): CausalResnetBlockFactorized3d(
+        (norm1): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (conv1): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (norm2): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (nin_shortcut): Identity()
+      )
+    )
+    (norm_out): CausalNormalize(
+      (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+    )
+    (conv_out): Sequential(
+      (0): CausalConv3d(
+        (conv3d): Conv3d(512, 16, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+      )
+      (1): CausalConv3d(
+        (conv3d): Conv3d(16, 16, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+      )
+    )
+  )
+  (decoder): DecoderFactorized(
+    (unpatcher3d): UnPatcher3D()
+    (conv_in): Sequential(
+      (0): CausalConv3d(
+        (conv3d): Conv3d(16, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+      )
+      (1): CausalConv3d(
+        (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+      )
+    )
+    (mid): Module(
+      (block_1): CausalResnetBlockFactorized3d(
+        (norm1): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (conv1): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (norm2): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Sequential(
+        (0): CausalAttnBlock(
+          (norm): CausalNormalize(
+            (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+          )
+          (q): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (k): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (v): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_out): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (1): CausalTemporalAttnBlock(
+          (norm): CausalNormalize(
+            (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+          )
+          (q): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (k): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (v): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+          (proj_out): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+      )
+      (block_2): CausalResnetBlockFactorized3d(
+        (norm1): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (conv1): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (norm2): CausalNormalize(
+          (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+        )
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): Sequential(
+          (0): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+        )
+        (nin_shortcut): Identity()
+      )
+    )
+    (up): ModuleList(
+      (0): Module(
+        (block): ModuleList(
+          (0): CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): CausalConv3d(
+              (conv3d): Conv3d(512, 256, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+            )
+          )
+          (1-2): 2 x CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(256, 256, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+      )
+      (1): Module(
+        (block): ModuleList(
+          (0-2): 3 x CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (upsample): CausalHybridUpsample3d(
+          (conv1): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+          )
+          (conv2): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+          )
+          (conv3): CausalConv3d(
+            (conv3d): Conv3d(512, 512, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+          )
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0-2): 3 x CausalResnetBlockFactorized3d(
+            (norm1): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (conv1): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (norm2): CausalNormalize(
+              (norm): GroupNorm(1, 512, eps=1e-06, affine=True)
+            )
+            (dropout): Dropout(p=0.0, inplace=False)
+            (conv2): Sequential(
+              (0): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+              )
+              (1): CausalConv3d(
+                (conv3d): Conv3d(512, 512, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+              )
+            )
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (upsample): CausalHybridUpsample3d(
+          (conv1): Identity()
+          (conv2): Identity()
+          (conv3): Identity()
+        )
+      )
+    )
+    (norm_out): CausalNormalize(
+      (norm): GroupNorm(1, 256, eps=1e-06, affine=True)
+    )
+    (conv_out): Sequential(
+      (0): CausalConv3d(
+        (conv3d): Conv3d(256, 192, kernel_size=(1, 3, 3), stride=(1, 1, 1))
+      )
+      (1): CausalConv3d(
+        (conv3d): Conv3d(192, 192, kernel_size=(3, 1, 1), stride=(1, 1, 1))
+      )
+    )
+  )
+  (quant_conv): CausalConv3d(
+    (conv3d): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  )
+  (post_quant_conv): CausalConv3d(
+    (conv3d): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+  )
+  (distribution): IdentityDistribution()
+)
