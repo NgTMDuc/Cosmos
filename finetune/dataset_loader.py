@@ -3,6 +3,8 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
 
+H, W = 256, 256
+C = 3
 class CustomDataset(Dataset):
     def __init__(self, path, mode):
         super().__init__()
@@ -17,6 +19,18 @@ class CustomDataset(Dataset):
     
     def __getitem__(self, idx):
         npy_path = self.data[idx]
-        sample = np.load(npy_path, allow_pickle=True).item()
-        image = torch.from_numpy(sample['image']).float()
-        return image
+        sample = np.load(npy_path)  # shape: (D, H, W)
+
+        image = torch.from_numpy(sample).float()  # (D, H, W)
+
+        # Add channel dim: (D, 1, H, W)
+        image = image.unsqueeze(1)
+
+        # Repeat along channel: (D, 3, H, W)
+        image = image.repeat(1, C, 1, 1)
+
+        # Resize H, W if needed
+        if image.shape[-2:] != (H, W):
+            image = F.interpolate(image, size=(H, W), mode='bilinear', align_corners=False)
+
+        return image  # shape: (D, 3, 256, 256)
