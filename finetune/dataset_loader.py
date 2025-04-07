@@ -2,9 +2,11 @@ import os
 import torch
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
+import torch.nn.functional as F
 
 H, W = 256, 256
 C = 3
+
 class CustomDataset(Dataset):
     def __init__(self, path, mode):
         super().__init__()
@@ -34,3 +36,14 @@ class CustomDataset(Dataset):
             image = F.interpolate(image, size=(H, W), mode='bilinear', align_corners=False)
 
         return image  # shape: (D, 3, 256, 256)
+
+def get_dataloader(path_to_txt, mode="train", batch_size=4, shuffle=True, num_workers=4):
+    dataset = CustomDataset(path=path_to_txt, mode=mode)
+    dataloader = DataLoader(
+        dataset,
+        batch_size=batch_size,
+        shuffle=shuffle if mode == "train" else False,
+        num_workers=num_workers,
+        pin_memory=True
+    )
+    return dataloader
