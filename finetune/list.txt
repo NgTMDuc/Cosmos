@@ -1,0 +1,2 @@
+/home/jovyan/shared/tienhuu060102/data-petct/PET_report_paired/PETCT_2017
+/home/jovyan/shared/tienhuu060102/data-petct/PET_report_paired/PETCT_2019
